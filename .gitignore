@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pyapi/venv/
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Machine Learning Models
+*.h5
+*.pkl
+*.joblib
+*.sav
+scaler.joblib
+scaler.save
+*.pth
+*.onnx
+
+# Data files (if they're large or sensitive)
+*.csv
+*.xlsx
+*.json
+# Uncomment the line above if you want to ignore all JSON files
+# Otherwise, keep your config JSONs tracked
+
+# Angular
+mental-wellness-ui/node_modules/
+mental-wellness-ui/dist/
+mental-wellness-ui/.angular/
+mental-wellness-ui/tmp/
+mental-wellness-ui/out-tsc/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Synthetic data (if you regenerate it)
+pyapi/synthetic_mental_wellness_data.csv
+
+# Model predictions/outputs
+pyapi/predictions_vs_actual.png
+pyapi/ScreenTime vs MentalWellnessScore.png

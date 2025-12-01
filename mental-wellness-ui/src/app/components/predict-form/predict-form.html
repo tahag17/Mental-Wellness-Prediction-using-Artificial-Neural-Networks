@@ -1,0 +1,151 @@
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow rounded-xl">
+  <h1 class="text-3xl font-bold mb-6 text-center">Mental Wellness Prediction</h1>
+
+  <form [formGroup]="wellnessForm" (ngSubmit)="submit()" class="space-y-6">
+    <!-- GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- Age -->
+      <div>
+        <label class="block font-semibold mb-1">Age</label>
+        <input
+          type="number"
+          formControlName="age"
+          class="w-full border rounded-lg p-2 focus:ring focus:ring-blue-300"
+        />
+      </div>
+
+      <!-- Gender -->
+      <div>
+        <label class="block font-semibold mb-1">Gender</label>
+        <select formControlName="gender" class="w-full border rounded-lg p-2">
+          <option *ngFor="let g of genders" [value]="g">{{ g }}</option>
+        </select>
+      </div>
+
+      <!-- Occupation -->
+      <div>
+        <label class="block font-semibold mb-1">Occupation</label>
+        <select formControlName="occupation" class="w-full border rounded-lg p-2">
+          <option *ngFor="let o of occupations" [value]="o">{{ o }}</option>
+        </select>
+      </div>
+
+      <!-- Work Mode -->
+      <div>
+        <label class="block font-semibold mb-1">Work Mode</label>
+        <select formControlName="work_mode" class="w-full border rounded-lg p-2">
+          <option *ngFor="let mode of workModes" [value]="mode">{{ mode }}</option>
+        </select>
+      </div>
+
+      <!-- Screen Times -->
+      <div>
+        <label class="block font-semibold mb-1">Screen Time Hours</label>
+        <input
+          type="number"
+          formControlName="screen_time_hours"
+          class="w-full border rounded-lg p-2"
+        />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Work Screen Hours</label>
+        <input
+          type="number"
+          formControlName="work_screen_hours"
+          class="w-full border rounded-lg p-2"
+        />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Leisure Screen Hours</label>
+        <input
+          type="number"
+          formControlName="leisure_screen_hours"
+          class="w-full border rounded-lg p-2"
+        />
+      </div>
+
+      <!-- Sleep -->
+      <div>
+        <label class="block font-semibold mb-1">Sleep Hours</label>
+        <input type="number" formControlName="sleep_hours" class="w-full border rounded-lg p-2" />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Sleep Quality (1–5)</label>
+        <input
+          type="number"
+          min="1"
+          max="5"
+          formControlName="sleep_quality_1_5"
+          class="w-full border rounded-lg p-2"
+        />
+      </div>
+
+      <!-- Stress / Productivity -->
+      <div>
+        <label class="block font-semibold mb-1">Stress Level (0–10)</label>
+        <input
+          type="number"
+          min="0"
+          max="10"
+          formControlName="stress_level_0_10"
+          class="w-full border rounded-lg p-2"
+        />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Productivity (0–100)</label>
+        <input
+          type="number"
+          min="0"
+          max="100"
+          formControlName="productivity_0_100"
+          class="w-full border rounded-lg p-2"
+        />
+      </div>
+
+      <!-- Exercise & Social -->
+      <div>
+        <label class="block font-semibold mb-1">Exercise Minutes per Week</label>
+        <input
+          type="number"
+          formControlName="exercise_minutes_per_week"
+          class="w-full border rounded-lg p-2"
+        />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Social Hours per Week</label>
+        <input
+          type="number"
+          formControlName="social_hours_per_week"
+          class="w-full border rounded-lg p-2"
+        />
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <button
+      type="submit"
+      [disabled]="wellnessForm.invalid || loading"
+      class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:bg-gray-400"
+    >
+      {{ loading ? 'Predicting...' : 'Predict Mental Wellness' }}
+    </button>
+  </form>
+
+  <!-- SUCCESS -->
+  <div
+    *ngIf="result !== null"
+    class="mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center font-bold"
+  >
+    Predicted Mental Wellness: {{ result | number : '1.0-2' }}
+  </div>
+
+  <!-- ERROR -->
+  <div *ngIf="error" class="mt-6 p-4 bg-red-100 text-red-800 rounded-lg text-center">
+    {{ error }}
+  </div>
+</div>
