@@ -1,21 +1,23 @@
+# api.py
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
-from predict_service import predict_new_user
+from predict_service import predict_new_user, load_model_objects
 
 app = FastAPI(title="Mental Wellness Predictor")
 
-# ----- CORS setup -----
-# Allow requests from any origin
+# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allows all origins
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # allows all HTTP methods
-    allow_headers=["*"],  # allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
-# Define request data structure
+
+# Request data
 class UserData(BaseModel):
     age: int
     screen_time_hours: float
@@ -30,6 +32,11 @@ class UserData(BaseModel):
     gender: str
     occupation: str
     work_mode: str
+
+@app.on_event("startup")
+def startup_event():
+    # Load model, scaler, columns.json at startup
+    load_model_objects()
 
 @app.post("/predict")
 def predict(user: UserData):
