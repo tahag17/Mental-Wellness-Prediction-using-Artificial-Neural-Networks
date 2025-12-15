@@ -1,0 +1,46 @@
+# ----------------------------
+# Python virtual environments
+# ----------------------------
+venv/
+venv_tf/
+__pycache__/
+*.pyc
+*.pyo
+
+# ----------------------------
+# Git files
+# ----------------------------
+.git/
+.gitignore
+
+# ----------------------------
+# Logs
+# ----------------------------
+*.log
+
+# ----------------------------
+# OS files
+# ----------------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# Fly configuration
+# ----------------------------
+fly.toml
+
+# ----------------------------
+# Frontend build outputs
+# ----------------------------
+mental-wellness-ui/dist/
+mental-wellness-ui/tmp/
+mental-wellness-ui/out-tsc/
+mental-wellness-ui/bazel-out/
+mental-wellness-ui/node_modules/
+
+# ----------------------------
+# IDE and editor files
+# ----------------------------
+*.idea/
+*.vscode/
+*.sublime-workspace
