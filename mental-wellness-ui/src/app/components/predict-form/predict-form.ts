@@ -14,7 +14,7 @@ export class PredictForm {
   wellnessForm: FormGroup;
 
   occupations = ['Employed', 'Student', 'Self-employed', 'Unemployed', 'Retired'];
-  genders = ['Male', 'Female', 'Non-binary/Other'];
+  genders = ['Male', 'Female'];
   workModes = ['Remote', 'In-person', 'Hybrid'];
 
   result: number | null = null;

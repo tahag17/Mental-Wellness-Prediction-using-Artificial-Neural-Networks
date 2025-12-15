@@ -7,32 +7,25 @@ module.exports = {
     extend: {
       colors: {
         // Primary colors
-        primaryTail: '#03256C',
-        secondaryTail: '#2541B2',
-        accentTail: '#1768AC',
-        infoTail: '#06BEE1',
+        // Primary colors (matching the dark mode)
+        primaryTail: '#ef4444', // slightly brighter red
+        secondaryTail: '#f87171', // lighter warm red
+        accentTail: '#fca5a5', // soft accent
+        infoTail: '#fddfaf', // warm info color
 
         // Light mode
-        bgLight: '#FFFFFF',
-        surfaceLight: '#F9FAFB',
-        textLight: '#111827',
+        bgLight: '#fefefe', // soft white background
+        surfaceLight: '#fff5f5', // very light warm surface
+        textLight: '#4b1c1c', // dark reddish-brown for readability
 
         // Dark mode
-        bgDark: '#0F172A', // deep navy/blueish
-        surfaceDark: '#1E293B', // lighter panel
-        textDark: '#E0E0E0', // soft gray
-        primaryDarkTail: '#3B6EDB',
-        secondaryDarkTail: '#5A7FCF',
-        accentDarkTail: '#4CA3E0',
-        infoDarkTail: '#33C1F0',
-
-        bgLegacy: '#42000b', // dark, moody background
-        surfaceLegacy: '#f5e6d3', // warm beige for panels
-        textLegacy: '#3b1f1c', // dark reddish-brown text for readability on beige
-        primaryLegacy: '#b83232', // strong red for highlights
-        secondaryLegacy: '#8a2e2e', // muted red for secondary elements
-        accentLegacy: '#c04848', // bright accent red
-        infoLegacy: '#d4b16f', // muted gold/copper highlight
+        bgDark: '#42000b',
+        surfaceDark: '#f5e6d3',
+        textDark: '#3b1f1c',
+        primaryDarkTail: '#b83232',
+        secondaryDarkTail: '#8a2e2e',
+        accentDarkTail: '#c04848',
+        infoDarkTail: '#d4b16f',
 
         // Status colors
         successTail: '#16A34A',
