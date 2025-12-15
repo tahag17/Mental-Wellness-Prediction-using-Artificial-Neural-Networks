@@ -1,5 +1,7 @@
 # predict_service.py
 import pandas as pd
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 from tensorflow.keras.models import load_model
 import joblib
 import json
